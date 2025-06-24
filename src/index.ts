@@ -17,7 +17,6 @@ import {
   type CallToolResult,
   type CallToolRequest,
 } from '@modelcontextprotocol/sdk/types.js';
-import { setupWebServer } from './web-server.js';
 
 import { z, ZodError } from 'zod';
 import { jsonSchemaToZod } from 'json-schema-to-zod';
@@ -626,13 +625,17 @@ async function executeApiTool(
  * Main function to start the server
  */
 async function main() {
-  // Set up Web Server transport
-  try {
-    await setupWebServer(server, 4000);
-  } catch (error) {
-    console.error('Error setting up web server:', error);
-    process.exit(1);
-  }
+  // Debug: Log environment variables (remove in production)
+  console.error('=== Environment Variables Debug ===');
+  console.error('KIPU_ACCESS_ID:', process.env.KIPU_ACCESS_ID ? '✓ Set' : '✗ Not set');
+  console.error('KIPU_SECRET_KEY:', process.env.KIPU_SECRET_KEY ? '✓ Set' : '✗ Not set');
+  console.error('KIPU_APP_ID:', process.env.KIPU_APP_ID ? '✓ Set' : '✗ Not set');
+  console.error('==================================');
+
+  // Set up Stdio transport
+  const transport = new StdioServerTransport();
+  await server.connect(transport);
+  console.error('MCP Server connected to stdio transport');
 }
 
 /**
