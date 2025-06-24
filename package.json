@@ -5,7 +5,9 @@
   "private": true,
   "type": "module",
   "main": "build/index.js",
-  "bin": "build/index.js",
+  "bin": {
+    "kipu-mcp": "build/index.js"
+  },
   "files": [
     "build",
     "src"
