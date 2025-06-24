@@ -1,7 +1,37 @@
 {
   "name": "kipu-mcp",
-  "version": "0.2.0",
-  "description": "MCP Server generated from OpenAPI spec for kipu-mcp",
+  "version": "0.3.0",
+  "description": "Model Context Protocol (MCP) server for Kipu Healthcare API - Access patient records, vital signs, medications, appointments, and comprehensive healthcare data through AI assistants",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "healthcare",
+    "medical",
+    "kipu",
+    "ehr",
+    "electronic-health-records",
+    "patient-data",
+    "vital-signs",
+    "medications",
+    "appointments",
+    "healthcare-api",
+    "medical-records",
+    "clinical-data",
+    "phi",
+    "hipaa",
+    "ai-assistant",
+    "anthropic",
+    "claude",
+    "chatgpt",
+    "healthcare-ai",
+    "medical-ai",
+    "wrkdn",
+    "healthcare-compliance",
+    "healthcare-integration",
+    "api-server",
+    "typescript",
+    "nodejs"
+  ],
   "type": "module",
   "main": "build/index.js",
   "bin": {
@@ -9,7 +39,9 @@
   },
   "files": [
     "build",
-    "src"
+    "src",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "start": "node build/index.js",
@@ -20,6 +52,23 @@
   },
   "engines": {
     "node": ">=20.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Wrkdn/kipu-mcp.git"
+  },
+  "homepage": "https://github.com/Wrkdn/kipu-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/Wrkdn/kipu-mcp/issues"
+  },
+  "author": {
+    "name": "Max Barinov",
+    "url": "https://maxbarinov.com",
+    "email": "max.barinov@wrkdn.com"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.10.0",
